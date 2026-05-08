@@ -1,7 +1,31 @@
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
+build/
+
+# Environment variables 
 .env
 .env.local
+backend/.env
+backend/.env.local
+*.env
+
+# Logs
 *.log
+npm-debug.log*
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Uploads (user files, not source code)
 uploads/
+backend/uploads/
+
+# IDE - IntelliJ/WebStorm
+.idea/
+
+# TypeScript
+*.tsbuildinfo
