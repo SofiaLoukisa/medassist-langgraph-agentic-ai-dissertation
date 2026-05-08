@@ -97,37 +97,37 @@ The system understands the intent, queries the right tools, retrieves grounded i
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    React 18 Frontend                     │
-│         (TypeScript · Tailwind CSS · Vite)               │
-│   Chat UI · Patient Dashboard · PDF Manager · Cards      │
+│                    React 18 Frontend                    │
+│         (TypeScript · Tailwind CSS · Vite)              │
+│   Chat UI · Patient Dashboard · PDF Manager · Cards     │
 └────────────────────────┬────────────────────────────────┘
                          │ REST + SSE Streaming
 ┌────────────────────────▼────────────────────────────────┐
-│                   Hono Backend (Node.js)                  │
-│              JWT Auth · Chat Service · CRUD               │
-│                                                           │
-│   ┌─────────────────────────────────────────────────┐    │
-│   │              LangGraph Agent                     │    │
-│   │                                                  │    │
-│   │   ┌──────────┐    ┌───────────────────────┐     │    │
-│   │   │  Router  │───▶│      toolAgent         │     │    │
-│   │   │ (Intent  │    │   (ReAct Loop × 5)     │     │    │
-│   │   │Classify) │    │  10 LangChain Tools    │     │    │
-│   │   └──────────┘    └───────────────────────┘     │    │
-│   └─────────────────────────────────────────────────┘    │
+│                   Hono Backend (Node.js)                │
+│              JWT Auth · Chat Service · CRUD             │
+│                                                         │
+│   ┌─────────────────────────────────────────────────┐   │
+│   │              LangGraph Agent                    │   │
+│   │                                                 │   │
+│   │   ┌──────────┐    ┌───────────────────────┐     │   │
+│   │   │  Router  │───▶│      toolAgent        │     │   │
+│   │   │ (Intent  │    │   (ReAct Loop × 5)    │     │   │
+│   │   │Classify) │    │  10 LangChain Tools   │     │   │
+│   │   └──────────┘    └───────────────────────┘     │   │
+│   └─────────────────────────────────────────────────┘   │
 └────────────────────────┬────────────────────────────────┘
                          │ Drizzle ORM
 ┌────────────────────────▼────────────────────────────────┐
-│              PostgreSQL 16 + pgvector                     │
-│    Relational Data         Vector Store (HNSW index)      │
-│  Users · Patients ·      768-dim Embeddings               │
-│  Medications · Chat       Cosine Similarity Search        │
+│              PostgreSQL 16 + pgvector                   │
+│    Relational Data         Vector Store (HNSW index)    │
+│  Users · Patients ·      768-dim Embeddings             │
+│  Medications · Chat       Cosine Similarity Search      │
 └─────────────────────────────────────────────────────────┘
                          │
               ┌──────────▼──────────┐
-              │   Google Gemini API  │
-              │  Flash (LLM) +       │
-              │  Embedding-001 (RAG) │
+              │   Google Gemini API │
+              │  Flash (LLM) +      │
+              │  Embedding-001 (RAG)│
               └─────────────────────┘
 ```
 
